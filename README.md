@@ -1,11 +1,16 @@
-# ASML and U.S. Market Drivers: Exploratory Data Analysis
+# ASML Abnormal Returns and Market Drivers
 
 ## Overview
-What really moves **ASML’s stock performance** relative to the broader European market?
+This project analyzes ASML’s abnormal returns relative to the Euro Stoxx 50 and studies how they relate to broader market, sector, FX, volatility, and rates signals. The analysis focuses on identifying which external drivers matter most for ASML, how those relationships evolve over time, and whether they differ across volatility regimes.
 
-This project explores that question by studying **ASML’s daily abnormal return** — defined relative to the **EURO STOXX 50** — and linking it to a set of major external market signals. Instead of looking at ASML in isolation, the notebook focuses on **benchmark-relative performance**, which helps separate firm-specific dynamics from broad market noise.
+---
 
-The result is a market-focused exploratory analysis that combines **data cleaning, return construction, descriptive statistics, regime analysis, rolling correlations, and lead-lag structure**.
+## Repository structure
+- `asml_abnormal_returns_market_drivers.ipynb` — main notebook with the full workflow
+- `requirements.txt` — Python dependencies
+- `README.md` — project summary, methodology, and key findings
+
+---
 
 ## Research Question
 Which external market signals are most strongly associated with **ASML’s abnormal daily return**, and how stable are those relationships across time and volatility regimes?
@@ -16,6 +21,8 @@ Which external market signals are most strongly associated with **ASML’s abnor
 - **EUR/USD**
 - **VIX** daily change
 - **U.S. 10Y Treasury yield** daily change
+
+---
 
 ## Data
 Daily market data is downloaded using `yfinance` for the following period:
@@ -42,6 +49,8 @@ The main variable of interest is:
 \]
 
 This captures how ASML performs **relative to the wider European equity market**.
+
+---
 
 ## Methodology
 
@@ -95,6 +104,8 @@ Rolling Pearson and rolling Spearman correlations are compared for the key drive
 
 ### 10. Lead-lag profiles
 Correlations are computed for lags from **-5 to +5** trading days to test whether the drivers lead ASML or whether the strongest relationships are concentrated at lag 0.
+
+---
 
 ## Main Results
 
@@ -168,6 +179,8 @@ The key message is that the structure is mostly **contemporaneous**, not strongl
 
 The main pattern is clear: the correlation structure becomes **weaker and noisier in high-stress periods**.
 
+---
+
 ## Key Findings
 - ASML abnormal returns show **little meaningful autocorrelation**.
 - The strongest same-day drivers are **EUR/USD**, **Nasdaq-100**, and **SOX**.
@@ -176,6 +189,8 @@ The main pattern is clear: the correlation structure becomes **weaker and noisie
   - in **low-VIX periods**, correlations are stronger and cleaner,
   - in **high-VIX periods**, they weaken materially.
 - The lead-lag analysis suggests that the strongest relationships sit **at or near lag 0**.
+
+---
 
 ## Why this project matters
 This project:
@@ -198,6 +213,8 @@ That makes it relevant for:
 - `matplotlib`
 - `seaborn`
 - `statsmodels`
+
+---
 
 ## How to run
 1. Install the required Python packages.
