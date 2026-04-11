@@ -40,15 +40,12 @@ Daily market data is downloaded using `yfinance` for the following period:
 - U.S. 10Y Treasury yield
 
 ## Target Variable
+
 The main variable of interest is:
 
-\[
-\text{ASML abnormal return}_t
-=
-\text{ASML return}_t - \text{EURO STOXX 50 return}_t
-\]
+**ASML abnormal return_t = ASML return_t − EURO STOXX 50 return_t**
 
-This captures how ASML performs **relative to the wider European equity market**.
+This measures ASML’s performance relative to the broader European equity market.
 
 ---
 
